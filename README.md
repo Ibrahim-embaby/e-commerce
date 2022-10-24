@@ -54,5 +54,5 @@ once the customer buys the product, the cart page is shown and he can see the li
 
 ## Screenshots
 - **login screen**
-<img src='/screenshots/screenshot-1.png'>
+<img src='/screenshots/screenshot-1.png' height='300' width='400'>
     
