@@ -53,6 +53,27 @@ once the customer buys the product, the cart page is shown and he can see the li
         - **styles.css:** includes some style for the site pages
 
 ## Screenshots
-- **login screen**
-<img src='/screenshots/screenshot-1.png' height='300' width='400'>
+- **Login Screen**
+<img src='/screenshots/screenshot-1.png' width='640' height='324'>
+
+- **Register Screen**
+<img src='/screenshots/screenshot-2.png' width='640' height='324'>
+
+- **Seller-Home Screen**
+<img src='/screenshots/screenshot-3.png' width='640' height='324'>
+
+- **Customer-Home Screen**
+<img src='/screenshots/screenshot-4.png' width='640' height='324'>
+
+- **Search-Result Screen**
+<img src='/screenshots/screenshot-5.png' width='640' height='324'>
+
+- **Product-Details Screen**
+<img src='/screenshots/screenshot-6.png' width='640' height='324'>
+
+- **Empty-Cart Screen**
+<img src='/screenshots/screenshot-7.png' width='640' height='324'>
+
+- **Non-Empty-Cart Screen**
+<img src='/screenshots/screenshot-8.png' width='640' height='324'>
     
