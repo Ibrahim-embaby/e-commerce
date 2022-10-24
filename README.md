@@ -5,7 +5,7 @@
 * [Description](#description)
 * [Screenshots](#screenshots)
 
-## Description:
+## Description
 This is an e-commerce web application that connects sellers and customers.
 
 - the seller can add a product to sell by providing the product title, price, image, and optionally description.
@@ -15,7 +15,8 @@ if the product that the seller removed is ordered by one or more customer, the t
 - the customer can see the products added by the sellers and can search for a specific product.
 also, the customer can buy a product at the number he wants but not exceeds the total cash he owns.
 once the customer buys the product, the cart page is shown and he can see the list of the products he bought
-
+- **Used Tools**:
+    - <b><em>python, flask, html, bootstrap, jinja, sqlite3</em></b>
 - **the project consists of:**
     - **app.py:**
         - contains the all backend functions that the system needs such as:
