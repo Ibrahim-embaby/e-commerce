@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Details
+{% endblock %}
+
+{% block main %}
+        <div>
+            <a class="mb-2" href="/" id="arrow_back"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <h1 class="mb-4" style="font-weight:bold">{{product[0]["prod_name"]}}</h1>
+        <div class="row">
+            <div class="col text-center"><img src={{product[0]["image"]}} width = "400" height = "400"></div>
+            <div class="col d-flex flex-column justify-content-between">
+              <div>
+                <h3 style="font-weight:bold">${{product[0]["price"]}}</h3>
+                {% if product[0]["description"] %}
+                  <strong>Description:</strong>
+                  <p>{{product[0]["description"]}}</p>
+                {% endif %}
+              </div>
+              <form action="/details" method="POST" class="row g-3" >
+                  <div class="col-auto" style="width:130px">
+                    <input autocomplete="off" type="number" class="form-control" name="count" placeholder="count" min="1" integer positive value="1">
+                  </div>
+                  <input type="hidden" name="id" value="{{product[0]["id"]}}">
+                  <div class="col">
+                    <button type="submit" class="btn btn-primary mb-3">Add To Cart</button>
+                  </div>
+              </form>
+            </div>
+        </div>
+{% endblock %}

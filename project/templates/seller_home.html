@@ -1,0 +1,37 @@
+{% extends "seller_layout.html" %}
+
+{% block title %} Seller home {% endblock %}
+
+{% block products %}
+{% if not products %}
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height:639px;">
+        <h1 class="text-muted">no products</h1>
+        <div><img src="/static/cart.png" width="246" height="246"></div>
+    </div>
+{% endif %}
+
+
+{% if products %}
+    <div class="d-flex flex-wrap justify-content-center">
+        {% for product in products %}
+            <div class="card m-2 p-0" style="width: 15rem;">
+                <img src={{product["image"]}} class="card-img-top">
+                <div class="d-flex flex-column justify-content-between" style="min-height:160px; padding:16px;">
+                    <div>
+                        <h5 class="title">{{product["prod_name"]}}</h5>
+                        <strong style="color:green">${{product["price"]}}</strong>
+                        {% if product["description"] %}
+                        <p class="card-text" style="max-height:50px; white-space:nowrap;overflow:hidden; text-overflow:ellipsis;">{{product["description"]}}</p>
+                        {% endif %}
+                    </div>
+                    <form action="/cart" method="POST">
+                        <input hidden name="id" value={{product["prod_id"]}}>
+                        <input hidden name="type" value="seller">
+                        <button class="btn btn-danger" type="submit" style="width:100%">remove</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<div class="row justify-content-md-center">
+    {% for product in products %}
+    <div class="card m-2 p-0" style="width: 15rem;">
+        <img src={{product["image"]}} class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product["prod_name"]}}</h5>
+            <strong style="color:green">${{product["price"]}}</strong>
+            {% if product["description"] %}
+            <p class="card-text" style="max-height:50px; white-space:nowrap;overflow:hidden; text-overflow:ellipsis;">{{product["description"]}}</p>
+            {% endif%}
+        </div>
+        <div class="card-footer" style="background-color:#134e6f">
+            <small class="text-muted"><a href="details?id={{product["id"]}}" class="link">more details...</a></small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

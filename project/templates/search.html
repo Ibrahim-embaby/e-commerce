@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+<div>
+    <a class="mb-2" href="/" id="arrow_back"><i class="fa-solid fa-arrow-left"></i></a>
+</div>
+<div class="row justify-content-md-center">
+    {% for result in results %}
+    <div class="card m-2 p-0" style="width: 15rem;">
+        <img src={{result["image"]}} class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{result["prod_name"]}}</h5>
+            <strong style="color:green">${{result["price"]}}</strong>
+            {% if result["description"] %}
+            <p class="card-text" style="max-height:50px; white-space:nowrap;overflow:hidden; text-overflow:ellipsis;">{{result["description"]}}</p>
+            {% endif%}
+        </div>
+        <div class="card-footer" style="background-color:#134e6f">
+            <small class="text-muted"><a href="details?id={{result["id"]}}" class="link">more details...</a></small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

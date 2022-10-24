@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Cart
+{% endblock %}
+
+{% block main %}
+    <div class="mb-4">
+        <a href="/" id="arrow_back"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div style="min-height:342px">
+        {% if not orders %}
+            <h1 class="text-center text-muted">no orders</h1>
+            <div class="col text-center"><img src="/static/cart.png" width="246" height="246"></div>
+        {% endif %}
+        {% if orders %}
+            <table class="table table-light">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th >Order Name</th>
+                        <th class="text-center">Count</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(orders|length) %}
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{orders[i]["prod_name"]}}</td>
+                        <td class="text-center">{{orders[i]["count"]}}</td>
+                        <td>${{"%.2f"|format(orders[i]["price"])}}</td>
+                        <td>${{"%.2f"|format(orders[i]["total"])}}</td>
+                        <td>
+                            <form action="/cart" method="POST">
+                                <input hidden name="id" value={{orders[i]["prod_id"]}}>
+                                <input hidden name="total" value={{orders[i]["total"]}}>
+                                <input hidden name="type" value="customer">
+                                <button class="btn btn-danger">remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><strong>Cash</strong></td>
+                        <td class="text-center" colspan="5" style="color:#fff;background-color:#4286f5">{{"$%.2f"|format(cash[0]['cash'])}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td class="text-center" colspan="5" style="color:#fff;background-color:#4286f5">$10,000.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

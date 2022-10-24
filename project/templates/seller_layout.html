@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+        <link href="/static/logo-icon.png" rel="icon">
+        <link href="/static/styles.css" rel="stylesheet">
+        <link href="/static/css/leon.css" rel="stylesheet">
+        <link href="/static/css/all.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <!-- Main content -->
+        <main class="d-flex flex-row">
+            <!-- dashboard -->
+            <div class="d-flex flex-column" style="width:25%; min-height:700px; background-color:#183153; color:#fff">
+                <h2 class="m-4">dashboard</h2>
+                <p class="m-4 mb-2">Add a Product</p>
+                <form class="d-flex flex-column m-4 mt-0" action="/seller_home" method="POST" enctype="multipart/form-data">
+                    <input class="form-control mb-3" type="text" name="title" placeholder="product title" autocomplete="off">
+                    <input class="form-control mb-3" type="number" name="price" placeholder="price" autocompelete="off" min="1" positive>
+                    <div class="mb-3">
+                        <label>select an image</label>
+                        <input class="form-control " type="file" name="image" accept="image">
+                    </div>
+                    <textarea class="form-control mb-3" name="description" placeholder="description" autocompelete="off"></textarea>
+                    <input class="btn btn-success" type="submit" value="Add">
+                </form>
+            </div>
+
+            <div class="d-flex flex-column flex-fill" style="width:75%">
+                <!-- Navbar -->
+                <nav class="bg-light d-flex flex-row justify-content-between align-items-center">
+                    <a class="navbar-brand ms-2" href="/seller_home"><img src="/static/google-logo.png" alt="logo" width="200" height="40"></a>
+                    {% if session["user_id"] %}
+                        <ul class="navbar-nav me-3">
+                            <li class="nav-item"><a class="nav-link nav_icons" href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                        </ul>
+                    {% endif %}
+                </nav>
+
+                <!-- products section -->
+                {% block products %} {% endblock %}
+
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="row m-0" style="">
+                <div class="col footer-logo m-0 p-0"><img src="/static/google-logo.png" alt="logo" width="250" height="50"></div>
+                <div class="col contact m-0 p-0">
+                    <h4>contact:</h4>
+                    <p class="m-0"><strong>Phone number:</strong> +111 111 111</p>
+                    <p class="m-0"><strong>Email:</strong> ibrahimembaby10@gmail.com</p>
+                </div>
+                <div class="col m-0 p-0 social">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="https://www.facebook.com/cs50/" target="blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="https://www.linkedin.com/in/ibrahim-mohamed-embaby-796a61170/" target="blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link"><i class="fa-brands fa-square-twitter"></i></a>
+                        </li>
+                      </ul>
+                </div>
+        </footer>
+    </body>
+</html>

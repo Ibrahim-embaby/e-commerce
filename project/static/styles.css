@@ -1,0 +1,41 @@
+footer{
+    padding:10px 0px;
+    width:100%;
+    background-color: #333;
+    color: white;
+}
+
+.footer-logo, .contact,.social{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+.footer-logo{
+    align-items:center;
+}
+
+.social ul li i{
+    font-size:30px;
+    color:white;
+}
+
+.social ul li i:hover,.nav_icons:hover,#arrow_back:hover{
+    color:#129af6;
+}
+
+.nav_icons,#arrow_back{
+    font-size:30px;
+    text-decoration:none;
+    color: #aaa;
+}
+
+.link{
+    text-decoration:none;
+    color: white;
+}
+.link:hover{
+    color: #ffa822;
+    text-decoration:underline;
+}

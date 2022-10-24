@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+    <div class="d-flex flex-column text-center justify-content-center" style="height:464px">
+
+        <div class="d-flex flex-row">
+            <!-- customer login -->
+            <div class="col">
+                <!-- title -->
+                <h2 class="mb-4">login as a customer</h2>
+                <!-- login form -->
+                <form class="col" action="/login" method="POST">
+                    <input hidden name="type" value="customer">
+                    <div class="mb-3 ">
+                        <input class="form-control mx-auto w-auto" autocomplete="off" autofocus type="text" placeholder="username" name="username">
+                    </div>
+
+                    <div class="mb-3">
+                        <input class="form-control mx-auto w-auto" type="password" placeholder="password" name="password">
+                    </div>
+                    <button class="btn btn-primary" type="submit">login</button>
+                </form>
+            </div>
+
+            <div style="background-color:#333; width:1px; height:auto; padding:0;"></div>
+
+            <!-- seller login -->
+            <div class="col" >
+                <!-- title -->
+                <h2 class="mb-4">login as a seller</h2>
+                <!-- login form -->
+                <form class="col" action="/login" method="POST">
+                    <input hidden name="type" value="seller">
+                    <div class="mb-3 ">
+                        <input class="form-control  mx-auto w-auto" autocomplete="off" autofocus type="text" placeholder="username" name="username">
+                    </div>
+
+                    <div class="mb-3">
+                        <input class="form-control  mx-auto w-auto" type="password" placeholder="password" name="password">
+                    </div>
+                    <button class="btn btn-primary" type="submit">login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- register -->
+        <p class="mt-4">or <a href="/register">register</a> if you don't have an account yet</p>
+    </div>
+{% endblock %}
+
