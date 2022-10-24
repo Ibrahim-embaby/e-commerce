@@ -16,7 +16,7 @@ if the product that the seller removed is ordered by one or more customers, the 
 also, the customer can buy a product at the number he wants but not exceeds the total cash he owns.
 once the customer buys the product, the cart page is shown and he can see the list of the products he bought
 - **Used Tools**:
-    - <b><em>python, flask, html, bootstrap, jinja, sqlite3</em></b>
+    - <b><em>python, flask, html, css, bootstrap, jinja, sqlite3</em></b>
 - **the project consists of:**
     - **app.py:**
         - contains the all backend functions that the system needs such as:
