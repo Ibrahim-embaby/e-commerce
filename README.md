@@ -10,7 +10,7 @@ This is an e-commerce web application that connects sellers and customers.
 
 - the seller can add a product to sell by providing the product title, price, image, and optionally description.
 and once the product is added he can remove it.
-if the product that the seller removed is ordered by one or more customer, the total price of the order is returned to them.
+if the product that the seller removed is ordered by one or more customers, the total price of the order is returned to them.
 
 - the customer can see the products added by the sellers and can search for a specific product.
 also, the customer can buy a product at the number he wants but not exceeds the total cash he owns.
