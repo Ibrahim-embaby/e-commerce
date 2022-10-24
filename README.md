@@ -53,5 +53,6 @@ once the customer buys the product, the cart page is shown and he can see the li
         - **styles.css:** includes some style for the site pages
 
 ## Screenshots
-    - **login screen**
-    ![screenshot-1](https://user-images.githubusercontent.com/54782271/197440349-d0a05822-e865-44e1-bfee-f6d127260419.png)
+- **login screen**
+<img src='/screenshots/screenshot-1.png'>
+    
