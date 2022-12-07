@@ -32,7 +32,7 @@ once the customer buys the product, the cart page is shown and he can see the li
         - it also includes the database operations to handle the user's actions
 
     - **ecommerce.db:**
-        - the database that contains all the data about the system users like accounts, products, and orders
+        - the database that contains all data about the system users like accounts, products, and orders
 
     - **templates folder:**
         - **layout.html:** This is a layout used by other customer HTML pages to provide them with static elements such as the navbar, the search field, and the cart icon
