@@ -53,6 +53,11 @@ once the customer buys the product, the cart page is shown and he can see the li
         - **webfonts folder:** contains some fonts files
         - **styles.css:** includes some style for the site pages
 
+## Usage
+```bash
+flask run
+```
+
 ## Screenshots
 - **Login Screen**
 <img src='/screenshots/screenshot-1.png' width='640' height='324'>
