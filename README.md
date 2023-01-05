@@ -3,6 +3,7 @@
 ## Table of Contents
 
 * [Description](#description)
+* [Usage](#usage)
 * [Screenshots](#screenshots)
 
 ## Description
